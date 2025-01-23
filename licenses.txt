@@ -1,0 +1,13 @@
+Licenses for images used in the project:  
+
+1. Image of Visa card:  
+   - Source: https://example.com/visa-card-image  
+   - License: CC BY 4.0 (Creative Commons Attribution 4.0 International License)  
+
+2. Image of MasterCard:  
+   - Source: https://example.com/mastercard-image  
+   - License: CC BY 4.0 (Creative Commons Attribution 4.0 International License)  
+
+3. Image of Mir card:  
+   - Source: https://example.com/mir-card-image  
+   - License: Public Domain

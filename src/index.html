@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Credit Card Validator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="bg-white p-6 rounded-lg shadow-md w-96">
+      <h1 class="text-2xl font-bold mb-4">Проверка номера карты</h1>
+      <input
+        type="text"
+        id="cardNumber"
+        placeholder="Введите номер карты"
+        class="border border-gray-300 p-2 w-full mb-4 rounded"
+      />
+      <button
+        id="validateButton"
+        class="bg-blue-500 text-white p-2 rounded w-full"
+      >
+        Проверить
+      </button>
+      <div id="result" class="mt-4"></div>
+    </div>
+
+    <script>
+      const cardProviders = {
+        Visa: /^4[0-9]{12}(?:[0-9]{3})?$/,
+        MasterCard: /^5[1-5][0-9]{14}$/,
+        "American Express": /^3[47][0-9]{13}$/,
+        Mir: /^220[0-4][0-9]{12}$/,
+        // Добавьте другие провайдеры по мере необходимости
+      };
+
+      function validateCardNumber(cardNumber) {
+        // Удаляем пробелы и дефисы
+        cardNumber = cardNumber.replace(/\s+/g, "").replace(/-/g, "");
+        const regex = /^(?:\d{4}[- ]?){3}\d{4}$/;
+
+        if (!regex.test(cardNumber)) {
+          return false;
+        }
+
+        // Алгоритм Луна для проверки валидности номера карты
+        let sum = 0;
+        let alternate = false;
+
+        for (let i = cardNumber.length - 1; i >= 0; i--) {
+          let n = parseInt(cardNumber.charAt(i), 10);
+
+          if (alternate) {
+            n *= 2;
+            if (n > 9) n -= 9;
+          }
+
+          sum += n;
+          alternate = !alternate;
+        }
+
+        return sum % 10 === 0;
+      }
+
+      function getCardProvider(cardNumber) {
+        for (const [provider, regex] of Object.entries(cardProviders)) {
+          if (regex.test(cardNumber)) {
+            return provider;
+          }
+        }
+        return "Неизвестный провайдер";
+      }
+
+      document
+        .getElementById("validateButton")
+        .addEventListener("click", () => {
+          const cardNumber = document.getElementById("cardNumber").value;
+          const resultDiv = document.getElementById("result");
+
+          if (validateCardNumber(cardNumber)) {
+            const provider = getCardProvider(cardNumber);
+            resultDiv.innerHTML = `<p class="text-green-500">Номер карты валиден. Провайдер: ${provider}</p>`;
+          } else {
+            resultDiv.innerHTML = `<p class="text-red-500">Номер карты не валиден.</p>`;
+          }
+        });
+    </script>
+  </body>
+</html>
