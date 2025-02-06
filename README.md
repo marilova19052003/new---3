@@ -1,5 +1,17 @@
-# Credit Card Validator
+# Валидатор кредитных карт
 
-[![Build Status](https://ci.appveyor.com/api/projects/status/your-build-status?svg=true)](https://ci.appveyor.com/project/your-username/your-repo-name)
+[![Build Status](https://ci.appveyor.com/api/projects/status/your_project_id?svg=true)](https://ci.appveyor.com/project/your_username/your_project_name)
 
-[Demo](https://your-username.github.io/your-repo-name/)
+## Описание
+
+Этот проект представляет собой валидатор кредитных карт, который проверяет валидность номера карты и определяет ее тип.
+
+## Установка
+
+1. Клонируйте репозиторий.
+2. Установите зависимости: `npm install`.
+3. Запустите сборку: `npm run build`.
+
+## Демо
+
+[Ссылка на GitHub Pages](https://your_username.github.io/your_project_name/)

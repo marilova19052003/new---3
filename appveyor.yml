@@ -4,8 +4,7 @@ configuration: Release
 build_script:
   - npm install
   - npm run build
-deploy:
-  provider: GitHub
-  artifact: dist
-  on:
-    branch: main
+test_script:
+  - npm test
+artifacts:
+  - dist/*
