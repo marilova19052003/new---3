@@ -1,7 +1,10 @@
 version: "1.0.{build}"
-image: node:18
+image: Visual Studio 2022
 
 stack: node 18
+
+install:
+  - choco install nodejs
 
 branches:
   only:
