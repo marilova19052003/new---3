@@ -1,10 +1,8 @@
 export function isValidCardNumber(cardNumber) {
-  // Удаляем пробелы и нецифровые символы
   const sanitized = cardNumber.replace(/\D/g, "");
   let sum = 0;
   let shouldDouble = false;
 
-  // Алгоритм Луна
   for (let i = sanitized.length - 1; i >= 0; i--) {
     let digit = parseInt(sanitized.charAt(i), 10);
     if (shouldDouble) {
