@@ -13,8 +13,8 @@ test_script:
   - npm test
 
 deploy_script:
-  - git config --global user.email "your.email@example.com"
-  - git config --global user.name "Your Name"
+  - git config --global user.email ""
+  - git config --global user.name "marilova19052003"
   - git checkout -b gh-pages
   - rm -rf *
   - cp -r dist/. .
