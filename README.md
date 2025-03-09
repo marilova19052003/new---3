@@ -1,6 +1,6 @@
 # Валидатор кредитных карт
 
-[![Build Status](https://ci.appveyor.com/api/projects/status/new-3?svg=true)](https://ci.appveyor.com/project/marilova19052003/new---3)
+[![Build Status](https://ci.appveyor.com/api/projects/status/your_project_id?svg=true)](https://ci.appveyor.com/project/your_username/your_project_name)
 
 ## Описание
 
@@ -15,3 +15,4 @@
 ## Демо
 
 [Ссылка на GitHub Pages](https://marilova19052003.github.io/new---3/)
+[![Build Status](https://ci.appveyor.com/api/projects/status/new-3?svg=true)](https://ci.appveyor.com/project/marilova19052003/new---3)
